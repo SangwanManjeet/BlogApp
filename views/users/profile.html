@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Signup</title>  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+          <div class="container">
+           {% if message.danger %}
+                <div class="alert alert-danger" role="alert">
+                    {{message.danger}}
+                  </div>
+            {% endif %}
+            {% if message.success %}
+                <div class="alert alert-success" role="alert">
+                    {{message.success}}
+                  </div>
+            {% endif %}
+              <p class="well"> Hello {{email}}</p>
+        </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

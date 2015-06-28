@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Signup</title>  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+          <div class="container">
+              {% if message.danger %}
+                <div class="alert alert-danger" role="alert">
+                    {{message.danger}}
+                  </div>
+            {% endif %}
+
+
+            <h1>User Sign Up</h1>
+
+            <form role="form" action="/users/signup" method="post">
+
+              <div class="form-group">
+                <label for="email" >Email address</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Valid email address" >
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" >
+              </div>
+
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
