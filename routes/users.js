@@ -29,7 +29,8 @@ router.post('/signup', function(req, res) {
   });
 });
 
-router.get("/profile",function(res,res){
+router.get("/profile",function(req,res){
+	console.log("passport user .."+req.user);
 		res.render('users/profile');
 })
 

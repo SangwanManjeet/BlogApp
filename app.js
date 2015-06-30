@@ -13,7 +13,7 @@ var posts = require('./routes/posts');
 var User = require("./models/users.js");
 var app = express();
 var swig = require('swig');
-
+var methodOverride = require('method-override');
 // view engine setup
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
@@ -28,6 +28,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(methodOverride(function(req, res) {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method
+    delete req.body._method
+    return method
+  }
+}));
 // for flash 
 app.use(session({secret: 'secret', resave: true, saveUninitialized: true, cookie: { maxAge: 60000 }}));
 app.use(flash());
